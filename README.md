@@ -20,7 +20,7 @@ To get started with, download Git from [here](https://git-scm.com/downloads). Fo
 - Clone the forked repository.
 - You can then start coding in the starter files cloned.
 
-HTML tags are the building blocks for any website. They are like keywords that describe the format of the site or any page. Some of the important tags used in HTML are `<div>`, `<section>`, `<header>`, `<p>`, `<i>`, `<span>`, `<input>`, etc. Each tag in HTML has certe defined using the attributes. There are many more tags that are used in HTML.
+HTML tags are the building blocks for any website. They are like keywords that describe the format of the site or any page. Some of the important tags used in HTML are `<div>`, `<section>`, `<header>`, `<footer>`, `<p>`, `<i>`, `<span>`, `<input>`, etc. Each tag in HTML has certe defined using the attributes. There are many more tags that are used in HTML.
 
 CSS is used to style your website. It is responsible for the appearance and presentation of the website. There are tons of CSS properties that can be added to any element. Some of the most important ones are listed below:
 
