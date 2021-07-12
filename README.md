@@ -3,6 +3,11 @@
 Welcome everyone to Dev_week 2021, where you will be introduced to the beginning stage of web development. Before diving into advanced technologies, it is better to know the fundamentals of web development - HTML, CSS and JavaScript.
 So in this week, you will be building a Car dashboard UI which will consist of a map and a music playlist section. The steps to build this project are divided into tasks that have to be done within that day. Resources for each task is provided at the end of each day.
 
+
+## Project description
+
+You can see the basic overview of how the project should look and what features should be included in the [doc](https://docs.google.com/document/d/1BDKkcUXrMFTwtLokGZoCyj8S83iTMU5ziApeieMPo1o/edit?usp=sharing) given
+
 ## Tasks
 
 ### Day 1 - Learn Git and GitHub, HTML and CSS
