@@ -29,7 +29,7 @@ body {
 	min-height: 712px;
 	max-height: 1200px;
 	width: 90vw;
-	min-width: 1000px;
+	min-width: 900px;
 	max-width: 1600px;
 	background-image: linear-gradient(to right, rgb(0, 0, 20), rgb(1, 1, 50));
 	border-radius: 50px;
@@ -42,7 +42,7 @@ body {
 	flex-direction: column;
 	color: white;
 	height: 60rem;
-	width: 120px;
+	width: 100px;
 	position: relative;
 	left: 30px;
 	border-radius: 30px;
@@ -70,8 +70,9 @@ body {
     position: absolute;
     height: $side-font + 2.2rem;
     top: 5.5rem;
-    border-left: 12px solid rgb(233, 10, 122);
+    border-left: 10px solid rgb(240, 8, 248);
     left: 0;
     border-radius: 30px;
-    box-shadow: 2rem 0 4.5rem rgb(233, 10, 122);
+    box-shadow: 1rem 0 3.2rem rgb(240, 8, 248);
+    transition: all 0.25s ease-out;
 }

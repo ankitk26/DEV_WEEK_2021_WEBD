@@ -35,7 +35,7 @@ body {
   min-height: 712px;
   max-height: 1200px;
   width: 90vw;
-  min-width: 1000px;
+  min-width: 900px;
   max-width: 1600px;
   background-image: -webkit-gradient(linear, left top, right top, from(#000014), to(#010132));
   background-image: linear-gradient(to right, #000014, #010132);
@@ -56,7 +56,7 @@ body {
           flex-direction: column;
   color: white;
   height: 60rem;
-  width: 120px;
+  width: 100px;
   position: relative;
   left: 30px;
   border-radius: 30px;
@@ -87,10 +87,12 @@ body {
   position: absolute;
   height: 6.4rem;
   top: 5.5rem;
-  border-left: 12px solid #e90a7a;
+  border-left: 10px solid #f008f8;
   left: 0;
   border-radius: 30px;
-  -webkit-box-shadow: 2rem 0 4.5rem #e90a7a;
-          box-shadow: 2rem 0 4.5rem #e90a7a;
+  -webkit-box-shadow: 1rem 0 3.2rem #f008f8;
+          box-shadow: 1rem 0 3.2rem #f008f8;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 /*# sourceMappingURL=style.css.map */
