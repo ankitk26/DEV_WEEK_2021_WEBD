@@ -7,15 +7,31 @@
 		<title>Dashboard</title>
 
 		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+			rel="stylesheet"
+		/>
 
 		<script
 			src="https://kit.fontawesome.com/5d3c8eea54.js"
 			crossorigin="anonymous"
 		></script>
 
+		<!-- Mapbox -->
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+		<link
+			href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+			rel="stylesheet"
+		/>
+
 		<script src="script.js" async></script>
 	</head>
+
 	<body>
+		<div class="error">
+			<span>Device size incompatible!</span>
+		</div>
 		<div class="main-hood">
 			<div class="sidebar">
 				<span class="nav"></span>
@@ -24,6 +40,15 @@
 				<span class="fas fa-fan side-btn"></span>
 				<span class="fas fa-headphones side-btn"></span>
 				<span class="fas fa-volume-up side-btn"></span>
+			</div>
+			<div class="wrapper">
+				<div class="container"></div>
+				<div class="container">
+					<div id="map" class="location"></div>
+				</div>
+				<div class="container"></div>
+				<div class="container"></div>
+				<div class="container"></div>
 			</div>
 		</div>
 	</body>
