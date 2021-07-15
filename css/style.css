@@ -94,7 +94,7 @@ body {
   display: inline-flex;
   position: absolute;
   right: 4rem;
-  width: 18rem;
+  width: 20rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -168,6 +168,94 @@ body {
   width: 100%;
   border-radius: 25px;
   margin: auto;
+}
+
+.home {
+  height: 85%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.car-hood {
+  height: 60%;
+  border-left: 3px solid #910196;
+  border-right: 3px solid #910196;
+  -webkit-box-shadow: inset 0 0 4rem rgba(255, 255, 255, 0.26);
+          box-shadow: inset 0 0 4rem rgba(255, 255, 255, 0.26);
+  width: 85%;
+  border-radius: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.speed {
+  color: #ddd;
+  font-family: poppins;
+}
+
+.speed .speed-num {
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.speed .speed-unit {
+  font-size: 3rem;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.mode {
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.gears {
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.music-hood {
+  margin-top: 2rem;
+  height: 30%;
+  width: 85%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.song-img {
+  height: 15rem;
+}
+
+.car-img {
+  height: 25rem;
 }
 
 .error {

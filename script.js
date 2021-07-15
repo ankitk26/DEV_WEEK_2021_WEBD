@@ -49,7 +49,7 @@ function getTime() {
 	let s = d.getSeconds();
 	let day = days[d.getDay()];
 
-	time.textContent = day + ' ' + (h < 10? '0' + h: h) + ':' + m + ':' + (s < 10? '0' + s: s);
+	time.textContent = day + ' ' + (h < 10? '0' + h: h) + ':' + (m < 10? '0' + m: m) + ':' + (s < 10? '0' + s: s);
 }
 
 setInterval(getTime, 500);
