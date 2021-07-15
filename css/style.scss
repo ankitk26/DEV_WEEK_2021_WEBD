@@ -45,8 +45,9 @@ body {
 .wrapper {
 	height: 500%;
 	width: 80%;
-	margin: auto;
 	position: relative;
+	margin: auto;
+	transform: translateY(-40%);
 	transition: transform 0.3s ease-out;
 }
 
@@ -55,6 +56,35 @@ body {
 	height: 20%;
 	display: grid;
 	place-items: center;
+}
+
+.statusbar {
+	position: absolute;
+	width: 100%;
+	height: 4rem;
+	top: 1.8rem;
+	font-family: 'fira code';
+	font-size: 1.6rem;
+	color: white;
+	display: flex;
+
+	.right-status {
+		display: inline-flex;
+		position: absolute;
+		right: 4rem;
+		width: 18rem;
+		justify-content: space-evenly;
+	}
+	.time {
+		font-weight: 400;
+		position: relative;
+		left: 4rem;
+	}
+
+	.batt {
+		color: rgb(4, 219, 111);
+		font-size: 1.8rem;
+	}
 }
 
 .sidebar {
@@ -77,7 +107,7 @@ body {
 
 	.fas {
 		font-size: $side-font;
-		background-image: linear-gradient(to bottom, #fff, #888);
+		background-image: linear-gradient(to bottom, #fff, #666);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
@@ -94,6 +124,7 @@ body {
 	left: 0;
 	border-radius: 30px;
 	box-shadow: 1rem 0 3.2rem rgb(240, 8, 248);
+	transform: translateY(21.4rem);
 	transition: transform 0.25s ease-out;
 }
 

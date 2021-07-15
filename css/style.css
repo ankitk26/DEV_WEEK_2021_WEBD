@@ -57,8 +57,10 @@ body {
 .wrapper {
   height: 500%;
   width: 80%;
-  margin: auto;
   position: relative;
+  margin: auto;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -71,6 +73,42 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+}
+
+.statusbar {
+  position: absolute;
+  width: 100%;
+  height: 4rem;
+  top: 1.8rem;
+  font-family: 'fira code';
+  font-size: 1.6rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.statusbar .right-status {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  right: 4rem;
+  width: 18rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.statusbar .time {
+  font-weight: 400;
+  position: relative;
+  left: 4rem;
+}
+
+.statusbar .batt {
+  color: #04db6f;
+  font-size: 1.8rem;
 }
 
 .sidebar {
@@ -99,8 +137,8 @@ body {
 
 .sidebar .fas {
   font-size: 4.2rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#888));
-  background-image: linear-gradient(to bottom, #fff, #888);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#666));
+  background-image: linear-gradient(to bottom, #fff, #666);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -117,6 +155,8 @@ body {
   border-radius: 30px;
   -webkit-box-shadow: 1rem 0 3.2rem #f008f8;
           box-shadow: 1rem 0 3.2rem #f008f8;
+  -webkit-transform: translateY(21.4rem);
+          transform: translateY(21.4rem);
   -webkit-transition: -webkit-transform 0.25s ease-out;
   transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;

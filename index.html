@@ -11,18 +11,26 @@
 			href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
 			rel="stylesheet"
 		/>
+		<link href="https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700" rel="stylesheet" />
 
 		<script
 			src="https://kit.fontawesome.com/5d3c8eea54.js"
 			crossorigin="anonymous"
 		></script>
 
-		<!-- Mapbox -->
+		<!-- -----------MAPBOX------------ -->
 
 		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 		<link
 			href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
 			rel="stylesheet"
+		/>
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+			type="text/css"
 		/>
 
 		<script src="script.js" async></script>
@@ -33,6 +41,15 @@
 			<span>Device size incompatible!</span>
 		</div>
 		<div class="main-hood">
+			<div class="statusbar">
+				<div class="time"></div>
+				<div class="right-status">
+					<span class="fas fa-wifi wifi"></span>
+					<span class="fab fa-bluetooth-b"></span>
+					<span class="fas fa-signal"></span>
+					<span class="fas fa-battery-half batt"></span>
+				</div>
+			</div>
 			<div class="sidebar">
 				<span class="nav"></span>
 				<span class="fas fa-phone side-btn"></span>
@@ -43,10 +60,10 @@
 			</div>
 			<div class="wrapper">
 				<div class="container"></div>
+				<div class="container"></div>
 				<div class="container">
 					<div id="map" class="location"></div>
 				</div>
-				<div class="container"></div>
 				<div class="container"></div>
 				<div class="container"></div>
 			</div>

@@ -13,7 +13,7 @@ mapboxgl.accessToken =
 let map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/streets-v11',
-	center: [78.9629, 22.5],
+	center: [85, 22.5],
 	zoom: 6,
 });
 
@@ -23,7 +23,33 @@ map.addControl(
 			enableHighAccuracy: true,
 		},
 		trackUserLocation: true,
-	})
+	}),
+	'top-left'
 );
 
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(
+	new MapboxDirections({
+		accessToken: mapboxgl.accessToken,
+	}),
+	'top-right'
+);
+
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+// display time
+
+let time = document.querySelector('.time');
+
+let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+function getTime() {
+	let d = new Date();
+	let m = d.getMinutes();
+	let h = d.getHours();
+	let s = d.getSeconds();
+	let day = days[d.getDay()];
+
+	time.textContent = day + ' ' + (h < 10? '0' + h: h) + ':' + m + ':' + (s < 10? '0' + s: s);
+}
+
+setInterval(getTime, 500);
