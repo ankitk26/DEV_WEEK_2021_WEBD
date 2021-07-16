@@ -73,16 +73,31 @@ let speedVal = 0;
 let animationTime = 100;
 
 let speedAnimation = () => {
-	animationTime-=0.5;
+	animationTime -= 0.5;
 	speed.textContent = speedVal;
 	speedVal++;
 	if (speedVal == 262) {
-		let speedInfo = document.querySelector('.speed-info')
+		let speedInfo = document.querySelector('.speed-info');
 		speedInfo.textContent = `Max Speed`;
 		speedInfo.classList.remove('speed-flicker');
 		return;
 	}
 	setTimeout(speedAnimation, animationTime);
-}
+};
 
 setTimeout(speedAnimation, animationTime);
+
+// Music player
+
+let playBtn = document.querySelector('.play-btn');
+let pauseBtn = document.querySelector('.pause-btn');
+
+playBtn.addEventListener('click', () => {
+	playBtn.classList.remove('current-btn');
+	pauseBtn.classList.add('current-btn');
+});
+
+pauseBtn.addEventListener('click', () => {
+	playBtn.classList.add('current-btn');
+	pauseBtn.classList.remove('current-btn');
+});
