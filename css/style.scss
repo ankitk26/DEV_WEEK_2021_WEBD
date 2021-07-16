@@ -28,11 +28,9 @@ body {
 
 .main-hood {
 	height: 85vh;
-	min-height: 712px;
-	max-height: 1200px;
+	min-height: 620px;
 	width: 90vw;
-	min-width: 900px;
-	max-width: 1600px;
+	min-width: 700px;
 	background-image: linear-gradient(to right, rgb(0, 0, 20), rgb(1, 1, 50));
 	border-radius: 50px;
 	position: relative;
@@ -67,6 +65,7 @@ body {
 	font-size: 1.6rem;
 	color: white;
 	display: flex;
+	justify-content: center;
 
 	.right-status {
 		display: inline-flex;
@@ -214,14 +213,14 @@ body {
 	font-weight: 700;
 }
 
-@media screen and (max-width: 55rem) {
+@media screen and (max-width: 900px) {
 	.error {
 		display: grid;
 		place-items: center;
 	}
 }
 
-@media screen and (max-height: 50rem) {
+@media screen and (max-height: 620px) {
 	.error {
 		display: grid;
 		place-items: center;
