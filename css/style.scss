@@ -1,5 +1,7 @@
 $side-font: 4.2rem;
 $max-z: 1000;
+$border-radius: 30px;
+$trans-color: rgba(255, 255, 255, 0.15);
 
 html {
 	font-size: 62.5%;
@@ -46,7 +48,7 @@ body {
 	width: 80%;
 	position: relative;
 	margin: auto;
-	transform: translateY(-40%);
+	transform: translateY(-60%);
 	transition: transform 0.3s ease-out;
 }
 
@@ -94,13 +96,9 @@ body {
 	width: 100px;
 	position: relative;
 	left: 25px;
-	border-radius: 30px;
+	border-radius: $border-radius;
 	// align-self: center;
-	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 0.2),
-		rgba(255, 255, 255, 0.1)
-	);
+	background-color: $trans-color;
 	justify-content: space-evenly;
 	align-items: center;
 
@@ -121,13 +119,13 @@ body {
 	top: 5.5rem;
 	border-left: 10px solid rgb(240, 8, 248);
 	left: 0;
-	border-radius: 30px;
+	border-radius: $border-radius;
 	box-shadow: 1rem 0 3.2rem rgb(240, 8, 248);
 	transform: translateY(21.4rem);
 	transition: transform 0.25s ease-out;
 }
 
-.container { 
+.container {
 	max-width: 1200px;
 	margin: auto;
 }
@@ -135,7 +133,7 @@ body {
 .location {
 	height: 85%;
 	width: 100%;
-	border-radius: 25px;
+	border-radius: $border-radius;
 	margin: auto;
 }
 
@@ -172,13 +170,19 @@ body {
 		font-style: italic;
 		text-transform: lowercase;
 	}
+	.speed-info {
+		font-size: 2rem;
+		font-style: italic;
+	}
+	.speed-flicker {
+		animation: flicker 1s infinite;
+	}
 }
 
 .mode {
 	font-size: 2rem;
 	border-bottom: 1px solid white;
 	padding-bottom: 5px;
-
 }
 
 .gears {
@@ -191,20 +195,68 @@ body {
 	margin-top: 2rem;
 	height: 30%;
 	width: 85%;
-	border-radius: 30px;
-	background-color: rgba($color: #fff, $alpha: 0.1);
+	border-radius: $border-radius;
+	background-color: $trans-color;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-
 }
 
 .song-img {
-	height: 15rem;
+	height: 13rem;
+}
+
+.img-rotate {
+	animation: rotate 4s infinite linear;
 }
 
 .car-img {
 	height: 25rem;
+}
+
+// Music section
+
+.music-section {
+	height: 85%;
+	border-radius: $border-radius;
+	background-color: $trans-color;
+	width: 100%;
+	position: relative;
+}
+
+.line {
+	position: absolute;
+	top: 70%;
+	width: 90%;
+	border-radius: 100vw;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 5px;
+	background-color: rgb(240, 8, 248);
+	box-shadow: 0 0 3rem rgb(240, 8, 248);
+}
+
+.music-player {
+	position: absolute;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	top: 75%;
+	height: 20%;
+	width: 100%;
+}
+
+.music-control {
+	display: flex;
+	height: 80%;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 50%;
+
+	img {
+		height: 50px;
+		cursor: pointer;
+	}
 }
 
 .error {
@@ -230,5 +282,28 @@ body {
 	.error {
 		display: grid;
 		place-items: center;
+	}
+}
+
+// Animation keyframes
+
+@keyframes flicker {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

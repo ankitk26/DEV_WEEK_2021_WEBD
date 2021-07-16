@@ -1,3 +1,5 @@
+// sidebar
+
 const sidebarBtns = document.querySelectorAll('.side-btn');
 const nav = document.querySelector('.nav');
 const wrapper = document.querySelector('.wrapper');
@@ -7,6 +9,8 @@ sidebarBtns.forEach((btn, index) => {
 		wrapper.style.transform = `translateY(-${index * 20}%`;
 	});
 });
+
+// mapbox
 
 mapboxgl.accessToken =
 	'pk.eyJ1IjoicHNldWRvYm90IiwiYSI6ImNrcjBlajloMDFyMWsycHFwYjhueXVkb3QifQ.ZGVjk7dzAa74UqAmbKQgsQ';
@@ -49,7 +53,36 @@ function getTime() {
 	let s = d.getSeconds();
 	let day = days[d.getDay()];
 
-	time.textContent = day + ' ' + (h < 10? '0' + h: h) + ':' + (m < 10? '0' + m: m) + ':' + (s < 10? '0' + s: s);
+	time.textContent =
+		day +
+		' ' +
+		(h < 10 ? '0' + h : h) +
+		':' +
+		(m < 10 ? '0' + m : m) +
+		':' +
+		(s < 10 ? '0' + s : s);
 }
 
 setInterval(getTime, 500);
+
+// speed animation
+
+let speed = document.querySelector('.speed-num');
+
+let speedVal = 0;
+let animationTime = 100;
+
+let speedAnimation = () => {
+	animationTime-=0.5;
+	speed.textContent = speedVal;
+	speedVal++;
+	if (speedVal == 262) {
+		let speedInfo = document.querySelector('.speed-info')
+		speedInfo.textContent = `Max Speed`;
+		speedInfo.classList.remove('speed-flicker');
+		return;
+	}
+	setTimeout(speedAnimation, animationTime);
+}
+
+setTimeout(speedAnimation, animationTime);
