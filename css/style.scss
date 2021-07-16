@@ -31,6 +31,7 @@ body {
 	min-height: 620px;
 	width: 90vw;
 	min-width: 700px;
+	max-width: 1400px;
 	background-image: linear-gradient(to right, rgb(0, 0, 20), rgb(1, 1, 50));
 	border-radius: 50px;
 	position: relative;
@@ -124,6 +125,11 @@ body {
 	box-shadow: 1rem 0 3.2rem rgb(240, 8, 248);
 	transform: translateY(21.4rem);
 	transition: transform 0.25s ease-out;
+}
+
+.container { 
+	max-width: 1200px;
+	margin: auto;
 }
 
 .location {
