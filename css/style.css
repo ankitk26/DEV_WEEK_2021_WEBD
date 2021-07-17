@@ -268,11 +268,13 @@ body {
 
 .song-img {
   height: 13rem;
+  -webkit-animation: rotate 4s infinite linear forwards;
+          animation: rotate 4s infinite linear forwards;
 }
 
 .img-rotate {
-  -webkit-animation: rotate 4s infinite linear;
-          animation: rotate 4s infinite linear;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .car-img {
@@ -281,8 +283,6 @@ body {
 
 .music-section {
   height: 85%;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.15);
   width: 100%;
   position: relative;
 }
@@ -290,7 +290,7 @@ body {
 .line {
   position: absolute;
   top: 65%;
-  width: 90%;
+  width: 95%;
   border-radius: 100vw;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -299,6 +299,47 @@ body {
   background-color: #03a1fc;
   -webkit-box-shadow: 0 0 2rem #03a1fc;
           box-shadow: 0 0 2rem #03a1fc;
+}
+
+.music-selection {
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.music-selection input {
+  display: none;
+}
+
+.add-file {
+  height: 40px;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+}
+
+.song-list {
+  position: relative;
+  margin-top: 10rem;
+  margin-inline: auto;
+  max-height: 30rem;
+  width: 90%;
+  overflow: auto;
+  margin-bottom: 4rem;
+}
+
+.song-list .songs {
+  color: #00aeff;
+  font-family: Poppins, sans-serif;
+  font-size: 3rem;
+  margin-block: 2rem;
+  cursor: pointer;
 }
 
 .music-player {
@@ -312,9 +353,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 75%;
-  height: 20%;
+  top: 70%;
+  height: 30%;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
 }
 
 .music-control {
@@ -332,12 +375,14 @@ body {
 }
 
 .music-control img {
-  height: 50px;
+  height: 56px;
   cursor: pointer;
   display: none;
 }
 
-.music-control .current-btn, .music-control .next-btn, .music-control .prev-btn {
+.music-control .current-btn,
+.music-control .next-btn,
+.music-control .prev-btn {
   display: block;
 }
 
@@ -359,6 +404,9 @@ body {
     display: grid;
     place-items: center;
   }
+  .main-hood {
+    display: none;
+  }
 }
 
 @media screen and (max-height: 620px) {
@@ -366,6 +414,9 @@ body {
     display: -ms-grid;
     display: grid;
     place-items: center;
+  }
+  .main-hood {
+    display: none;
   }
 }
 

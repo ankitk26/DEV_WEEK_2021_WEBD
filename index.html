@@ -98,8 +98,12 @@
 				</div>
 				<div class="container">
 					<div class="music-section">
-						<audio src="media/levitating.mp3"></audio>
-						<div class="add-track"></div>
+						<div class="music-selection">
+							<audio></audio>
+							<img src="icons/add-file.png" class="add-file" alt="Add Files" />
+							<input type="file" id="music-input" multiple />
+							<div class="song-list"></div>
+						</div>
 						<div class="line"></div>
 						<div class="music-player">
 							<img
@@ -110,18 +114,25 @@
 							<div class="song-name"></div>
 							<div class="music-control">
 								<div>
-									<img src="icons/left-arrow.png" class="prev-btn" alt="Previous">
+									<img src="icons/back.png" class="prev-btn" alt="Previous" />
 								</div>
 								<div>
-									<img src="icons/play.png" class="play-btn m-btn current-btn" alt="Play">
-									<img src="icons/pause.png" class="pause-btn m-btn" alt="Pause">
+									<img
+										src="icons/play.png"
+										class="play-btn m-btn current-btn"
+										alt="Play"
+									/>
+									<img
+										src="icons/pause.png"
+										class="pause-btn m-btn"
+										alt="Pause"
+									/>
 								</div>
 								<div>
-									<img src="icons/right-arrow.png" class="next-btn" alt="Next">
-				
+									<img src="icons/next.png" class="next-btn" alt="Next" />
 								</div>
 							</div>
-							<div class="duration"></div>
+							<div class="progress"></div>
 						</div>
 					</div>
 				</div>

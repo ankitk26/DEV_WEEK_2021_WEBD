@@ -204,10 +204,11 @@ body {
 
 .song-img {
 	height: 13rem;
+	animation: rotate 4s infinite linear forwards;
 }
 
 .img-rotate {
-	animation: rotate 4s infinite linear;
+	animation-play-state: paused;
 }
 
 .car-img {
@@ -218,8 +219,6 @@ body {
 
 .music-section {
 	height: 85%;
-	border-radius: $border-radius;
-	background-color: $trans-color;
 	width: 100%;
 	position: relative;
 }
@@ -227,7 +226,7 @@ body {
 .line {
 	position: absolute;
 	top: 65%;
-	width: 90%;
+	width: 95%;
 	border-radius: 100vw;
 	left: 50%;
 	transform: translateX(-50%);
@@ -236,14 +235,55 @@ body {
 	box-shadow: 0 0 2rem rgb(3, 161, 252);
 }
 
+.music-selection {
+	height: 60%;
+	background-color: $trans-color;
+	width: 100%;
+	border-radius: $border-radius;
+	display: flex;
+	position: relative;
+
+	input {
+		display: none;
+	}
+}
+
+.add-file {
+	height: 40px;
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+	cursor: pointer;
+}
+
+.song-list {
+	position: relative;
+	margin-top: 10rem;
+	margin-inline: auto;
+	max-height: 30rem;
+	width: 90%;
+	overflow: auto;
+	margin-bottom: 4rem;
+
+	.songs {
+		color: rgb(0, 174, 255);
+		font-family: Poppins, sans-serif;
+		font-size: 3rem;
+		margin-block: 2rem;
+		cursor: pointer;
+	}
+}
+
 .music-player {
 	position: absolute;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	top: 75%;
-	height: 20%;
+	top: 70%;
+	height: 30%;
 	width: 100%;
+	background-color: $trans-color;
+	border-radius: $border-radius;
 }
 
 .music-control {
@@ -254,11 +294,13 @@ body {
 	width: 50%;
 
 	img {
-		height: 50px;
+		height: 56px;
 		cursor: pointer;
 		display: none;
 	}
-	.current-btn, .next-btn, .prev-btn{
+	.current-btn,
+	.next-btn,
+	.prev-btn {
 		display: block;
 	}
 }
@@ -280,12 +322,18 @@ body {
 		display: grid;
 		place-items: center;
 	}
+	.main-hood {
+		display: none;
+	}
 }
 
 @media screen and (max-height: 620px) {
 	.error {
 		display: grid;
 		place-items: center;
+	}
+	.main-hood {
+		display: none;
 	}
 }
 

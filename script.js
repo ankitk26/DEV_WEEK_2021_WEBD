@@ -91,13 +91,76 @@ setTimeout(speedAnimation, animationTime);
 
 let playBtn = document.querySelector('.play-btn');
 let pauseBtn = document.querySelector('.pause-btn');
+let imageRotate = document.querySelectorAll('.song-img');
+let audio = document.querySelector('audio');
+
+let musicNames = [];
+let musicQueue = [];
+let currentPlaying = 0;
 
 playBtn.addEventListener('click', () => {
+	if (musicQueue.length === 0) return;
 	playBtn.classList.remove('current-btn');
 	pauseBtn.classList.add('current-btn');
+	imageRotate.forEach((element) => element.classList.remove('img-rotate'));
+	audio.play();
 });
 
 pauseBtn.addEventListener('click', () => {
+	if (musicQueue.length === 0) return;
 	playBtn.classList.add('current-btn');
 	pauseBtn.classList.remove('current-btn');
+	imageRotate.forEach((element) => element.classList.add('img-rotate'));
+	audio.pause();
+});
+
+let addFiles = document.querySelector('.add-file');
+let musicInput = document.querySelector('#music-input');
+let musicList = document.querySelector('.song-list');
+
+addFiles.addEventListener('click', () => musicInput.click());
+
+musicInput.addEventListener('change', () => {
+	let inputfiles = musicInput.files;
+	for (let i = 0; i < inputfiles.length; i++)
+		musicNames.push(inputfiles[i].name);
+	updateList();
+});
+
+function updateList() {
+	musicNames.forEach((song, index) => {
+		let div = document.createElement('div');
+		div.textContent = `${index + 1}.\t${song}`;
+		div.setAttribute('class', 'songs');
+		musicList.appendChild(div);
+	});
+
+	musicQueue = document.querySelectorAll('.songs');
+	audio.setAttribute('src', `media/${musicNames[0]}`);
+
+	musicQueue.forEach((music, index) => {
+		music.addEventListener('click', () => {
+			currentPlaying = index;
+			audio.setAttribute('src', `media/${musicNames[index]}`);
+			audio.play();
+			playBtn.click();
+		});
+	});
+}
+
+let next = document.querySelector('.next-btn');
+let prev = document.querySelector('.prev-btn');
+
+next.addEventListener('click', () => {
+	if (musicQueue.length === 0) return;
+	if (currentPlaying + 1 > musicQueue.length) currentPlaying = 0;
+	else currentPlaying++;
+	musicQueue[currentPlaying].click();
+});
+
+prev.addEventListener('click', () => {
+	if (musicQueue.length === 0) return;
+	if (currentPlaying - 1 < 0) currentPlaying = musicQueue.length;
+	else currentPlaying--;
+	musicQueue[currentPlaying].click();
 });
