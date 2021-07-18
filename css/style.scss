@@ -49,7 +49,7 @@ body {
 	width: 80%;
 	position: relative;
 	margin: auto;
-	transform: translateY(-40%);
+	transform: translateY(-60%);
 	transition: transform 0.3s ease-out;
 }
 
@@ -105,11 +105,7 @@ body {
 
 	.fas {
 		font-size: $side-font;
-		background-image: linear-gradient(
-			to bottom,
-			#fff,
-			#666
-		);
+		background-image: linear-gradient(to bottom, #fff, #666);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
@@ -228,7 +224,6 @@ body {
 	position: relative;
 }
 
-
 .music-selection {
 	height: 60%;
 	background-color: $trans-color;
@@ -285,7 +280,7 @@ body {
 	.songs {
 		color: cyan;
 		font-family: $font;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		margin-block: 1rem;
 		cursor: pointer;
 		width: 100%;
@@ -325,7 +320,6 @@ body {
 	cursor: pointer;
 	background-color: $trans-color;
 	border-radius: 100vw;
-
 }
 
 .progress {
@@ -345,12 +339,17 @@ body {
 	align-items: center;
 }
 
-.song-name, .song-name-hood{
+.song-name,
+.song-name-hood {
 	color: cyan;
 	font-family: $font;
 	font-size: 2rem;
 	letter-spacing: 0.2rem;
 	margin-block: 1.5rem;
+}
+
+.song-name-hood {
+	font-size: 2.5rem;
 
 }
 
@@ -370,6 +369,17 @@ body {
 	.next-btn,
 	.prev-btn {
 		display: block;
+	}
+
+	.mute {
+		position: absolute;
+		right: 3rem;
+		img {
+			height: 40px;
+		}
+		.sound {
+			display: block;
+		}
 	}
 }
 

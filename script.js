@@ -107,12 +107,21 @@ let queuedSongs = [];
 let currentPlaying = 0;
 let counter = 0;
 
+let flag = 1;
+
 playBtn.addEventListener('click', () => {
 	if (musicQueue.length === 0) return;
 	playBtn.classList.remove('current-btn');
 	pauseBtn.classList.add('current-btn');
 	imageRotate.forEach((element) => element.classList.remove('img-rotate'));
-	musicQueue[currentPlaying].click();
+	if (flag) {
+		document.querySelector('.song-name').textContent = musicNames[0];
+		document.querySelector(
+			'.song-name-hood'
+		).textContent = `Playing ${musicNames[0]}`;
+		flag = 0;
+	}
+	audio.play();
 });
 
 pauseBtn.addEventListener('click', () => {
@@ -180,7 +189,7 @@ next.addEventListener('click', () => {
 	musicQueue[currentPlaying].click();
 });
 
-prev.addEventListener('click', () => { 
+prev.addEventListener('click', () => {
 	if (musicQueue.length === 0) return;
 	currentPlaying--;
 	if (currentPlaying < 0) currentPlaying = musicQueue.length - 1;
@@ -204,4 +213,19 @@ progressContainer.addEventListener('click', (e) => {
 	const clickX = e.offsetX;
 	const duration = audio.duration;
 	audio.currentTime = (clickX / width) * duration;
+});
+
+const muteBtn = document.querySelector('.mute-btn');
+const unmuteBtn = document.querySelector('.unmute-btn');
+
+muteBtn.addEventListener('click', () => {
+	audio.muted = true;
+	muteBtn.classList.remove('sound');
+	unmuteBtn.classList.add('sound');
+});
+
+unmuteBtn.addEventListener('click', () => {
+	audio.muted = false;
+	unmuteBtn.classList.remove('sound');
+	muteBtn.classList.add('sound');
 });

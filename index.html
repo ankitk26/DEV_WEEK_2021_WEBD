@@ -6,11 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Dashboard</title>
-		<link
-			rel="icon"
-			href="icons/title.png"
-			type="image/x-icon"
-		/>
+		<link rel="icon" href="icons/title.png" type="image/x-icon" />
 
 		<link rel="stylesheet" href="css/style.css" />
 		<link
@@ -71,7 +67,9 @@
 			</div>
 
 			<div class="wrapper">
-				<div class="container"></div>
+				<div class="container">
+					<img src="" alt="">
+				</div>
 				<div class="container">
 					<div id="map" class="location"></div>
 				</div>
@@ -106,15 +104,12 @@
 				<div class="container">
 					<div class="music-section">
 						<div class="music-selection">
-							<audio>
-								<source id="src">
-							</audio>
+							<audio></audio>
 							<div class="queue-text">Queue</div>
 							<div class="separator"></div>
 							<img src="icons/add-file.png" class="add-file" alt="Add Files" />
 							<input type="file" id="music-input" multiple />
-							<div class="song-list">
-							</div>
+							<div class="song-list"></div>
 						</div>
 						<div class="progress-container">
 							<div class="progress"></div>
@@ -126,7 +121,7 @@
 								alt=""
 							/>
 							<div class="music-control-container">
-							<div class="song-name">Nothing's Playing</div>
+								<div class="song-name">Nothing's Playing</div>
 
 								<div class="music-control">
 									<div>
@@ -146,6 +141,14 @@
 									</div>
 									<div>
 										<img src="icons/next.png" class="next-btn" alt="Next" />
+									</div>
+									<div class="mute">
+										<img
+											src="icons/audio.png"
+											class="mute-btn sound"
+											alt="Speaker"
+										/>
+										<img src="icons/mute.png" class="unmute-btn" alt="Muted" />
 									</div>
 								</div>
 							</div>
