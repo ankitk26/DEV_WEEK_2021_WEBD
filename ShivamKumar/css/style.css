@@ -484,6 +484,18 @@ body {
   font-weight: 700;
 }
 
+.error-con {
+  height: 85%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.error-img {
+  height: 280px;
+}
+
 @media screen and (max-width: 900px) {
   .error {
     display: -ms-grid;

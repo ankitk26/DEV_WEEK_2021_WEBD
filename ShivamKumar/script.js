@@ -107,6 +107,8 @@ let queuedSongs = [];
 let currentPlaying = 0;
 let counter = 0;
 
+let validFiles = /(\.mp3|\.m4a|\.3gp|\.webm)$/i;
+
 let flag = 1;
 
 playBtn.addEventListener('click', () => {
@@ -137,6 +139,10 @@ addFiles.addEventListener('click', () => musicInput.click());
 musicInput.addEventListener('change', () => {
 	let inputfiles = musicInput.files;
 	for (let i = 0; i < inputfiles.length; i++) {
+		if (!validFiles.exec(inputfiles[i].name)) {
+			alert('Unknown file-type detected. Please input valid media files!');
+			return;
+		}
 		musicNames.push(inputfiles[i].name);
 		musicFiles.push(inputfiles[i]);
 	}
