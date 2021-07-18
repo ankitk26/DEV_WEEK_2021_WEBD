@@ -93,17 +93,26 @@ let playBtn = document.querySelector('.play-btn');
 let pauseBtn = document.querySelector('.pause-btn');
 let imageRotate = document.querySelectorAll('.song-img');
 let audio = document.querySelector('audio');
+let progress = document.querySelector('.progress');
+let progressContainer = document.querySelector('.progress-container');
 
+let addFiles = document.querySelector('.add-file');
+let musicInput = document.querySelector('#music-input');
+let musicList = document.querySelector('.song-list');
+
+let musicFiles = [];
 let musicNames = [];
 let musicQueue = [];
+let queuedSongs = [];
 let currentPlaying = 0;
+let counter = 0;
 
 playBtn.addEventListener('click', () => {
 	if (musicQueue.length === 0) return;
 	playBtn.classList.remove('current-btn');
 	pauseBtn.classList.add('current-btn');
 	imageRotate.forEach((element) => element.classList.remove('img-rotate'));
-	audio.play();
+	musicQueue[currentPlaying].click();
 });
 
 pauseBtn.addEventListener('click', () => {
@@ -114,34 +123,47 @@ pauseBtn.addEventListener('click', () => {
 	audio.pause();
 });
 
-let addFiles = document.querySelector('.add-file');
-let musicInput = document.querySelector('#music-input');
-let musicList = document.querySelector('.song-list');
-
 addFiles.addEventListener('click', () => musicInput.click());
 
 musicInput.addEventListener('change', () => {
 	let inputfiles = musicInput.files;
-	for (let i = 0; i < inputfiles.length; i++)
+	for (let i = 0; i < inputfiles.length; i++) {
 		musicNames.push(inputfiles[i].name);
+		musicFiles.push(inputfiles[i]);
+	}
+
 	updateList();
 });
 
 function updateList() {
-	musicNames.forEach((song, index) => {
+	musicFiles.forEach((song, index) => {
+		if (queuedSongs.includes(musicNames[index])) return;
+
 		let div = document.createElement('div');
-		div.textContent = `${index + 1}.\t${song}`;
+		div.textContent = `${musicNames[index]}`;
 		div.setAttribute('class', 'songs');
+		if (counter % 2 == 0) div.setAttribute('class', 'songs songs--dark');
 		musicList.appendChild(div);
+
+		counter++;
+		queuedSongs.push(musicNames[index]);
 	});
 
 	musicQueue = document.querySelectorAll('.songs');
-	audio.setAttribute('src', `media/${musicNames[0]}`);
+	if (!audio.hasAttribute('src')) {
+		audio.setAttribute('src', URL.createObjectURL(musicFiles[0]));
+		audio.load();
+	}
 
 	musicQueue.forEach((music, index) => {
 		music.addEventListener('click', () => {
 			currentPlaying = index;
-			audio.setAttribute('src', `media/${musicNames[index]}`);
+			audio.setAttribute('src', URL.createObjectURL(musicFiles[index]));
+			audio.load();
+			document.querySelector('.song-name').textContent = musicNames[index];
+			document.querySelector(
+				'.song-name-hood'
+			).textContent = `Playing ${musicNames[index]}`;
 			audio.play();
 			playBtn.click();
 		});
@@ -153,14 +175,33 @@ let prev = document.querySelector('.prev-btn');
 
 next.addEventListener('click', () => {
 	if (musicQueue.length === 0) return;
-	if (currentPlaying + 1 > musicQueue.length) currentPlaying = 0;
-	else currentPlaying++;
+	currentPlaying++;
+	if (currentPlaying > musicQueue.length - 1) currentPlaying = 0;
 	musicQueue[currentPlaying].click();
 });
 
-prev.addEventListener('click', () => {
+prev.addEventListener('click', () => { 
 	if (musicQueue.length === 0) return;
-	if (currentPlaying - 1 < 0) currentPlaying = musicQueue.length;
-	else currentPlaying--;
+	currentPlaying--;
+	if (currentPlaying < 0) currentPlaying = musicQueue.length - 1;
 	musicQueue[currentPlaying].click();
+});
+
+audio.addEventListener('ended', () => {
+	if (!audio.hasAttribute('src')) return;
+	next.click();
+});
+
+audio.addEventListener('timeupdate', () => {
+	const { duration, currentTime } = audio;
+	let progressWidth = (currentTime / duration) * 100;
+	progress.style.width = `${progressWidth}%`;
+});
+
+progressContainer.addEventListener('click', (e) => {
+	if (!audio.hasAttribute('src')) return;
+	const width = progressContainer.clientWidth;
+	const clickX = e.offsetX;
+	const duration = audio.duration;
+	audio.currentTime = (clickX / width) * duration;
 });

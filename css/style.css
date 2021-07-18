@@ -58,8 +58,8 @@ body {
   width: 80%;
   position: relative;
   margin: auto;
-  -webkit-transform: translateY(-60%);
-          transform: translateY(-60%);
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -150,7 +150,7 @@ body {
   position: absolute;
   height: 6.4rem;
   top: 5.5rem;
-  border-left: 10px solid #03a1fc;
+  border-left: 10px solid cyan;
   left: 0;
   border-radius: 30px;
   -webkit-box-shadow: 1rem 0 3.2rem #08d4f8;
@@ -214,7 +214,7 @@ body {
 
 .speed {
   color: #ddd;
-  font-family: poppins;
+  font-family: "Poppins", sans-serif;
 }
 
 .speed .speed-num {
@@ -262,8 +262,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .song-img {
@@ -287,33 +288,30 @@ body {
   position: relative;
 }
 
-.line {
-  position: absolute;
-  top: 65%;
-  width: 95%;
-  border-radius: 100vw;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 4px;
-  background-color: #03a1fc;
-  -webkit-box-shadow: 0 0 2rem #03a1fc;
-          box-shadow: 0 0 2rem #03a1fc;
-}
-
 .music-selection {
   height: 60%;
   background-color: rgba(255, 255, 255, 0.15);
   width: 100%;
   border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
 }
 
 .music-selection input {
   display: none;
+}
+
+.queue-text {
+  color: cyan;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .add-file {
@@ -324,22 +322,46 @@ body {
   cursor: pointer;
 }
 
+.separator {
+  width: 95%;
+  margin-block: 1rem;
+  height: 2px;
+  background-color: #00e1ff;
+  position: relative;
+  top: 8rem;
+  -webkit-box-shadow: 0 0 4rem cyan;
+          box-shadow: 0 0 4rem cyan;
+  margin-inline: auto;
+}
+
 .song-list {
   position: relative;
   margin-top: 10rem;
   margin-inline: auto;
-  max-height: 30rem;
+  max-height: 60%;
   width: 90%;
   overflow: auto;
   margin-bottom: 4rem;
 }
 
 .song-list .songs {
-  color: #00aeff;
-  font-family: Poppins, sans-serif;
-  font-size: 3rem;
-  margin-block: 2rem;
+  color: cyan;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-block: 1rem;
   cursor: pointer;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  font-style: italic;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.song-list .songs--dark {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .music-player {
@@ -360,22 +382,68 @@ body {
   border-radius: 30px;
 }
 
+.progress-container {
+  width: 90%;
+  height: 6px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 100vw;
+}
+
+.progress {
+  width: 0;
+  cursor: progress;
+  border-radius: 100vw;
+  height: 100%;
+  background-color: cyan;
+  -webkit-box-shadow: 0 0 4rem cyan;
+          box-shadow: 0 0 4rem cyan;
+}
+
+.music-control-container {
+  height: 85%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.song-name, .song-name-hood {
+  color: cyan;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin-block: 1.5rem;
+}
+
 .music-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80%;
+  height: 100%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .music-control img {
-  height: 56px;
+  height: 50px;
   cursor: pointer;
   display: none;
 }
@@ -394,7 +462,7 @@ body {
   display: none;
   background-color: #fff;
   font-size: 4rem;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 

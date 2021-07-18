@@ -2,6 +2,7 @@ $side-font: 4.2rem;
 $max-z: 1000;
 $border-radius: 30px;
 $trans-color: rgba(255, 255, 255, 0.15);
+$font: 'Poppins', sans-serif;
 
 html {
 	font-size: 62.5%;
@@ -48,7 +49,7 @@ body {
 	width: 80%;
 	position: relative;
 	margin: auto;
-	transform: translateY(-60%);
+	transform: translateY(-40%);
 	transition: transform 0.3s ease-out;
 }
 
@@ -104,7 +105,11 @@ body {
 
 	.fas {
 		font-size: $side-font;
-		background-image: linear-gradient(to bottom, #fff, #666);
+		background-image: linear-gradient(
+			to bottom,
+			#fff,
+			#666
+		);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
@@ -117,7 +122,7 @@ body {
 	position: absolute;
 	height: $side-font + 2.2rem;
 	top: 5.5rem;
-	border-left: 10px solid rgb(3, 161, 252);
+	border-left: 10px solid cyan;
 	left: 0;
 	border-radius: $border-radius;
 	box-shadow: 1rem 0 3.2rem rgb(8, 212, 248);
@@ -160,7 +165,7 @@ body {
 
 .speed {
 	color: #ddd;
-	font-family: poppins;
+	font-family: $font;
 	.speed-num {
 		font-size: 8rem;
 		font-weight: 500;
@@ -199,7 +204,7 @@ body {
 	background-color: $trans-color;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
 .song-img {
@@ -223,29 +228,30 @@ body {
 	position: relative;
 }
 
-.line {
-	position: absolute;
-	top: 65%;
-	width: 95%;
-	border-radius: 100vw;
-	left: 50%;
-	transform: translateX(-50%);
-	height: 4px;
-	background-color: rgb(3, 161, 252);
-	box-shadow: 0 0 2rem rgb(3, 161, 252);
-}
 
 .music-selection {
 	height: 60%;
 	background-color: $trans-color;
 	width: 100%;
 	border-radius: $border-radius;
-	display: flex;
 	position: relative;
-
 	input {
 		display: none;
 	}
+}
+
+.queue-text {
+	color: cyan;
+	font-family: $font;
+	text-transform: uppercase;
+	margin-top: 2rem;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	font-size: 3rem;
+	letter-spacing: 0.3rem;
+	font-style: italic;
+	font-weight: 600;
 }
 
 .add-file {
@@ -256,21 +262,44 @@ body {
 	cursor: pointer;
 }
 
+.separator {
+	width: 95%;
+	margin-block: 1rem;
+	height: 2px;
+	background-color: rgb(0, 225, 255);
+	position: relative;
+	top: 8rem;
+	box-shadow: 0 0 4rem cyan;
+	margin-inline: auto;
+}
+
 .song-list {
 	position: relative;
 	margin-top: 10rem;
 	margin-inline: auto;
-	max-height: 30rem;
+	max-height: 60%;
 	width: 90%;
 	overflow: auto;
 	margin-bottom: 4rem;
 
 	.songs {
-		color: rgb(0, 174, 255);
-		font-family: Poppins, sans-serif;
-		font-size: 3rem;
-		margin-block: 2rem;
+		color: cyan;
+		font-family: $font;
+		font-size: 2.5rem;
+		margin-block: 1rem;
 		cursor: pointer;
+		width: 100%;
+		text-align: center;
+		letter-spacing: 0.2rem;
+		font-weight: 300;
+		font-style: italic;
+		height: 100%;
+		width: 100%;
+		border-radius: 2rem;
+	}
+
+	.songs--dark {
+		background-color: rgba(255, 255, 255, 0.1);
 	}
 }
 
@@ -286,15 +315,54 @@ body {
 	border-radius: $border-radius;
 }
 
+.progress-container {
+	width: 90%;
+	height: 6px;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	background-color: $trans-color;
+	border-radius: 100vw;
+
+}
+
+.progress {
+	width: 0;
+	cursor: progress;
+	border-radius: 100vw;
+	height: 100%;
+	background-color: cyan;
+	box-shadow: 0 0 4rem cyan;
+}
+
+.music-control-container {
+	height: 85%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.song-name, .song-name-hood{
+	color: cyan;
+	font-family: $font;
+	font-size: 2rem;
+	letter-spacing: 0.2rem;
+	margin-block: 1.5rem;
+
+}
+
 .music-control {
 	display: flex;
-	height: 80%;
+	height: 100%;
 	justify-content: space-evenly;
 	align-items: center;
-	width: 50%;
+	width: 100%;
 
 	img {
-		height: 56px;
+		height: 50px;
 		cursor: pointer;
 		display: none;
 	}
@@ -313,7 +381,7 @@ body {
 	display: none;
 	background-color: #fff;
 	font-size: 4rem;
-	font-family: Poppins, sans-serif;
+	font-family: $font;
 	font-weight: 700;
 }
 

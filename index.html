@@ -4,7 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>Dashboard</title>
+		<link
+			rel="icon"
+			href="icons/title.png"
+			type="image/x-icon"
+		/>
 
 		<link rel="stylesheet" href="css/style.css" />
 		<link
@@ -76,7 +82,7 @@
 							<div class="speed">
 								<div class="speed-info speed-flicker">Speeding up...</div>
 
-								<span class="speed-num">108 </span>
+								<span class="speed-num">0</span>
 								<span class="speed-unit"> KMPH</span>
 								<div class="mode">
 									Mode &emsp; &emsp; &ensp;<i>Self Driving</i>
@@ -92,6 +98,7 @@
 								class="song-img img-rotate"
 								alt=""
 							/>
+							<div class="song-name-hood">Nothing's Playing</div>
 							<div class="controls"></div>
 						</div>
 					</div>
@@ -99,40 +106,49 @@
 				<div class="container">
 					<div class="music-section">
 						<div class="music-selection">
-							<audio></audio>
+							<audio>
+								<source id="src">
+							</audio>
+							<div class="queue-text">Queue</div>
+							<div class="separator"></div>
 							<img src="icons/add-file.png" class="add-file" alt="Add Files" />
 							<input type="file" id="music-input" multiple />
-							<div class="song-list"></div>
+							<div class="song-list">
+							</div>
 						</div>
-						<div class="line"></div>
+						<div class="progress-container">
+							<div class="progress"></div>
+						</div>
 						<div class="music-player">
 							<img
 								src="images/song_img.png"
 								class="song-img img-rotate"
 								alt=""
 							/>
-							<div class="song-name"></div>
-							<div class="music-control">
-								<div>
-									<img src="icons/back.png" class="prev-btn" alt="Previous" />
-								</div>
-								<div>
-									<img
-										src="icons/play.png"
-										class="play-btn m-btn current-btn"
-										alt="Play"
-									/>
-									<img
-										src="icons/pause.png"
-										class="pause-btn m-btn"
-										alt="Pause"
-									/>
-								</div>
-								<div>
-									<img src="icons/next.png" class="next-btn" alt="Next" />
+							<div class="music-control-container">
+							<div class="song-name">Nothing's Playing</div>
+
+								<div class="music-control">
+									<div>
+										<img src="icons/back.png" class="prev-btn" alt="Previous" />
+									</div>
+									<div>
+										<img
+											src="icons/play.png"
+											class="play-btn m-btn current-btn"
+											alt="Play"
+										/>
+										<img
+											src="icons/pause.png"
+											class="pause-btn m-btn"
+											alt="Pause"
+										/>
+									</div>
+									<div>
+										<img src="icons/next.png" class="next-btn" alt="Next" />
+									</div>
 								</div>
 							</div>
-							<div class="progress"></div>
 						</div>
 					</div>
 				</div>
